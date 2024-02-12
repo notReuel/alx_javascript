@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modifying Elements</title>
+  <style>
+    img {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <img id="myImage" src="https://picsum.photos/200/300" alt="My Image">
+</body>
+
+    <script>
+        const image = document.getElementById("myImage") //selects the element with the id "myImage" and stores in the variable i created - image
+        image.src = "https://picsum.photos/200/301" //changes the href vlaue in the element with the id "myImage" which i stored in the variable - image
+        image.alt = "New Image" // uses the same procedure to change the value of the alt text
+        document.getElementById("myImage").style.border = "2px solid red"; //leverages the same technique - document.getElementById() to style the element, stumbled on this by mistake, dids't realize i could just call the name of the ID
+    </script>
+</html>
