@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creating and Removing Elements</title>
+</head>
+<body>
+  <div id="container"></div>
+
+  <!-- Adding a button to hide/unhide the div when clicked -->
+  <button onclick="divBtn()">Click and see what happens? Surprise</button>
+
+  <script>
+    const conta = document.getElementById("container"); //a variable to hold the div element using it's id name
+
+    //creating an element <p> in the html from js
+    const para = document.createElement("p"); //creating and assigning the new p element to a variable for easy manipulation
+    para.textContent = "New paragraph" //giving the newly created element it's content
+
+    //If you check your browser, you wouldn't find the new paragraph we created
+    //adding the p element and it's content to the div with the container id - the same one we linked to the variable conta
+    conta.appendChild(para) //ps, don't use inverted comma's in the parentheses, the js engine wouldn't recognise that
+
+    //creating a function for the buttom to hide/unhide the div
+    //using the css display attribute of the div
+
+    function divBtn(){
+        if (conta.style.display === "none"){
+            conta.style.display = "block";
+        }
+        else {
+            conta.style.display = "none";
+        }
+    }
+  </script>
+</body>
+</html>
