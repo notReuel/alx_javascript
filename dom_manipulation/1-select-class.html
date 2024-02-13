@@ -13,24 +13,10 @@
   <p>This is a normal paragraph.</p>
   
   <script>
-    const para = document.querySelectorAll("p");
+    const para = document.querySelectorAll("p.highlight");
     //the above command returns the paragraphs as a node list, and using HTMLElement.style would not work,
     //so i have to select the position of the <p> i want to style and pass it as a parameter in the list, like i did below
     para[0].style.fontWeight = "bold";
-
-    
-    // HTMLElement.style; {
-    //   para.style.fontWeight = "bold"
-    // }
-    
-    // para.setAttribute("class", "highlight");
-    
-    // para.forEach((p) => {
-    //     p.style.fontWeight = "bold";
-    // });
-    
-   
-  
   </script>
 </body>
 </html>
