@@ -20,7 +20,7 @@ class Square extends Squared {
                 for (let i=0; i<this.width; i++){
                     process.stdout.write(c)
                 }
-                console.log
+                console.log()
             }
         }
     }
