@@ -22,5 +22,9 @@ class Rectangle {
     }
 }
 
-
+class Square(Rectangle) {
+    constructor(size){
+        super()
+    }
+}
 module.exports=Rectangle;
