@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creating and Removing Elements</title>
+</head>
+<body>
+  <div id="container"></div>
+
+  <button onclick="suprise()">Click to get your Suprise!</button>
+
+  <script>
+    const contra = document.getElementById("container")
+
+    const parag = document.createElement("p");
+    parag.textContent = "New Paragraph"
+
+    contra.appendChild(parag)
+
+    function suprise() {
+        if (contra.style.display === "none"){
+            contra.style.display = "block"
+        }
+        else 
+        {
+            contra.style.display = "none"
+        }
+    }
+    
+
+        // para.setAttribute("class", "highlight");
+    
+        // para.forEach((p) => {
+        //     p.style.fontWeight = "bold";
+        // });
+    
+   
+  </script>
+</body>
+</html>

@@ -50,7 +50,7 @@
         //Creating the show cookies function
         function showCookies() 
         {
-            var displayCookies = document.createElement('p');
+            var displayCookies = document.createElement('p');   
             displayCookies.textContent = `Cookies ${document.cookie}`;
             document.body.appendChild(displayCookies)
         }
@@ -66,6 +66,19 @@
         cookiesBtn.addEventListener("click", function(){
             showCookies();
         });
+
+        const path = require('path');
+
+        module.exports = {
+            //...
+            devServer: {
+                static: {
+                    directory: path.join(__dirname, 'public'),
+                },
+                compress: true,
+                port: 8080,
+            },
+        };
     </script>
 </body>
 </html>
