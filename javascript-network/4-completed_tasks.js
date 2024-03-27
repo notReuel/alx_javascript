@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request')
-const fs - require('fs')
+const fs = require('fs')
 
 let URL = process.argv[2]
 option = {
