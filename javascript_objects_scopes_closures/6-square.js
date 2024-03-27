@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const Squared = require('/5-square')
+const Squared = require('./5-square')
 
 class Square extends Squared {
 
