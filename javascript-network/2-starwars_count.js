@@ -15,7 +15,7 @@ req(options, (err, res) => {
     len = formattedRes["results"].length
     for(let i=0; i<len; i++){
         x = formattedRes.results[i]['characters']
-        for (let j=0;j<XMLDocument.length; j++){
+        for (let j=0;j,x.length; j++){
             character = x[j]
             if(character.includes('18')){
                 count+=1
