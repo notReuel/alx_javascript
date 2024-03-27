@@ -4,23 +4,23 @@ const fs = require('fs')
 
 let URL = process.argv[2]
 options = {
-    'method': 'GET',
-    'url': URL
+    'method' : 'GET',
+    'url' : URL,
+
 }
+let tasksCompleted = {}
 
-let taskCompleted = {}
-
-request(options, (err,res) => {
-    if (err) console.log(err)
-    records = JSON.parse(res.body)
-    for(let i=0; i<record.length; i++){
+request(options, (err, res)=>{
+    if(err) console.log(err)
+    record = JSON.parse(res.body)
+    for(let i = 0; i<record.length;i++){
         if(record[i]['completed'] ){
-            if(record[i]['userId'] in taskCompleted){
-                taskCompleted[record[i]['userId']] += 1
-            }else {
-                taskCompleted[record[i]['userId']] = 1
-            }
+                if(record[i]['userId'] in tasksCompleted){
+                    tasksCompleted[record[i]['userId']]+=1
+                }else{
+                    tasksCompleted[record[i]['userId']]=1
+                }
         }
     }
-    console.log(taskCompleted)
+    console.log(tasksCompleted)
 })
