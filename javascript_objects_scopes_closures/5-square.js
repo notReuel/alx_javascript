@@ -5,9 +5,10 @@ const Rectangle = require("./4-rectangle")
 class Square extends Rectangle 
 {
     // calling the constructor and super()
-    constructor(size){
+    constructor(size)
+    {
         super(size, size)
     }
 }
-module.exports=Rectangle;
+module.exports = Square;
 
