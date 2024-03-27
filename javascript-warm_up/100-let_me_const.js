@@ -1,3 +1,3 @@
 // script to change the value of a var
 
-var myVar = 333
+myVar = 333
