@@ -6,4 +6,4 @@ function mult (x, theFunction){
     }
 }
 
-module.exports.callMeMoby = repeat
+module.exports.callMeMoby = mult
