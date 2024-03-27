@@ -1,30 +1,13 @@
-// a script for a rectangle class
-class Rectangle {
+#!/usr/bin/node
+const Rectangle = require("./4-rectangle")
 
-    constructor (w,h){
-
-        if (w <= 0 || h<= 0 || h === undefined || w === undefined )
-        {
-            return
-        }
-
-        this.width = w
-        this.height = h
-    }
-
-    print() {
-        for (let i=0; i<this.height; i++){
-            for(let i=0; i<this.width; i++){
-                process.stdout.write("X")
-            }
-            console.log()
-        }
-    }
-}
-
-class Square(Rectangle) {
+// inheriting from the class Rectangle
+class Square extends Rectangle 
+{
+    // calling the constructor and super()
     constructor(size){
-        super()
+        super(size, size)
     }
 }
 module.exports=Rectangle;
+
