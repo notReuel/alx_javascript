@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="test-welcome">Login to the Website</h1>
+    <div action="">
+        <label for="firstname">Firstname</label>
+        <input type="text" id="firstname" placeholder="Firstname">
+        
+
+        <label for="email">email</label>
+        <input type="text" id="email" placeholder="Email">
+
+        <button onclick="setCookies()" id="login-btn">Log me in</button>
+    </div>
+
+
+    <h1>Cookies</h1>
+    <button onclick="showCookies()" id="cookies-btn">Show the cookies</button>
+
+    <script>   
+        //creating the get cookie function
+        function setCookies()
+        {
+            //find the elements with the ID in the bracket and assign their values to the variable names - firstName and email
+            const firstName = document.getElementById("firstname").value;
+            const email = document.getElementById("email").value;
+            
+            //EXPIRY DATE + MODIFYING THE COOKIES TO EXPIRE AFTER 10 DAYS
+            //create a variable to store the the new current Date
+            const expiryDate = new Date();
+            expiryDate.setTime(expiryDate.getTime() + (10*24*60*60*1000));
+            let expires = expiryDate.toUTCString();
+            //use the get date method to get the currrent date, add 14 extra days
+            //to it, then assign it to the expirydate variable we created using the setDate method
+
+            //Here we use the doc.cookie to assign the form value 
+            //we stored in the variables above to the cookies we would be creating
+            document.cookie = `firstname=${escape(firstName)}`;
+            document.cookie =`email=${escape(email)}`;
+            document.cookie = `expires=${(expires)}`
+            document.cookie =`path=/`
+         }
+
+        //Creating the show cookies function
+        function showCookies() 
+        {
+            var displayCookies = document.createElement('p');
+            displayCookies.textContent = `Cookies ${document.cookie}`;
+            document.body.appendChild(displayCookies)
+        }
+
+        //setting the buttons
+        var loginBtn = document.getElementById('login-btn');
+        var cookiesBtn = document.getElementById('cookies-btn');
+
+        loginBtn.addEventListener("click", function(){
+            setCookies();
+        });
+
+        cookiesBtn.addEventListener("click", function(){
+            showCookies();
+        });
+    </script>
+</body>
+</html>
