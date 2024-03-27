@@ -10,9 +10,9 @@ options = {
 
 let taskCompleted = {}
 
-request(optionss, (err,res) => {
+request(options, (err,res) => {
     if (err) console.log(err)
-    record = JSON.parse(res.body)
+    records = JSON.parse(res.body)
     for(let i=0; i<record.length; i++){
         if(record[i]['completed'] ){
             if(record[i]['userId'] in taskCompleted){
