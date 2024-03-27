@@ -1,0 +1,1 @@
+A folder containing introductory exercises on javascript
