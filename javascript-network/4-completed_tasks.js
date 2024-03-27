@@ -3,14 +3,14 @@ const request = require('request')
 const fs = require('fs')
 
 let URL = process.argv[2]
-option = {
+options = {
     'method': 'GET',
     'url': URL
 }
 
 let taskCompleted = {}
 
-request(options, (err,res) => {
+request(optionss, (err,res) => {
     if (err) console.log(err)
     record = JSON.parse(res.body)
     for(let i=0; i<record.length; i++){
