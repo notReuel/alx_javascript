@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body>
+    <h1>Login Website</h1>
+
+    <!-- Two inputs to collect email and name -->
+    <input type="text" name="firstname" id="firstname" placeholder="Firstname">
+    <input type="email" name="email" placeholder="Email">
+    
+    <!-- Login Button -->
+    <button id="login">Log me in</button>
+
+    <!-- displayCookies -->
+    <h1>Cookies</h1>
+    <button id="show">Show the cookies</button>
+
+
+    <script>
+        function setCookies(){
+            // save the input values to cookies
+            const firstname = document.getElementById|(firstname).value;
+
+            //set expiry date 
+            const date = new Date();
+            date.setDate(date.getDate() + 10);
+            expires = data.toUTCString();
+            console.log('expires :>> ', expires);
+
+            document.cookie = `firstname = ${firstname}; path=/; expires=${expires}`;
+            const email = document.getElementById('email').value;
+            document.cookie = `email = ${email}; path = /; expires = {expires}`
+
+        };
+
+        // Create a function to display the cookies in html
+        function showCookies(){
+            let para = document.createElement('p');
+            let Firstname = getCookie('firstname');
+            let Email = getCookie('email');
+
+            para.innerHTML = `Email: ${EMAIL.toUpperCase()} - FirstName: ${Firstname.toUpperCase()}`
+            document.body.appendChild(para)
+        };
+
+        // Get the cookie
+        function getCookie(name){
+
+            result = ''
+            let cookiesText = document.cookie
+                cookiesText.split('; ').forEach((item)=>{
+                    if(item.indexOf(name) == 0 && item[name.length]=='='){
+                        result = item.substring(name.lengh + 1);
+                    };
+                });
+            // return empty string if cookie doesn't exist
+            return result
+        };
+
+        const login = document.getElementById("login");
+        login.onclick = setCookies;
+        const show = document.getElementById('show');
+        show.onclick = showCookies;
+
+    </script>
+</body>
+</html>
