@@ -1,14 +1,18 @@
 var globalVariable = Welcome
 
 function outer(globalVariable){
-    console.log(globalVariable)
-
-    var course = Holberton
+    alert(globalVariable);
+    let course = 'Holberton'
 
     function inner(){
-        console.log(course)
-        outer()
-    }
-}
+        alert(globalVariable+course);
+        exclamation = '!'
 
-console.log(outer)
+        function inception(){
+            console.log(globalVariable+inner+exclamation);
+        }
+        inception()
+    }
+    inner()
+}
+outer()
